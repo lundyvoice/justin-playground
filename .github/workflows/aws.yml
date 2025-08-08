@@ -1,0 +1,58 @@
+on:
+  push:
+    branches: [ main ]
+
+env:
+  AWS_REGION: us-east-1                 # set this to your preferred AWS region, e.g. us-west-1
+  AWS_ACCESS_KEY_ID: 'AKIAU36JCTXJWKMDWUOE'
+  # file, e.g. .aws/task-definition.json
+  CONTAINER_NAME: lundy-widget           # set this to the name of the container in the
+  # containerDefinitions section of your task definition
+  IMAGE_TAG: lundy-widget-api-0.0.0
+  AWS_BUCKET: ${{ 'justin.lundy-dev.com' }}
+  CLOUDFRONT_DISTRIBUTION: 'E2T0WSEMZGBJ8D'
+
+name: Deploy `lundy-widget` to ECS
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Upload public to s3
+        uses: jakejarvis/s3-sync-action@master
+        #with:
+        #  args: --delete # do not delete for now while we are using /geo for insights
+        env:
+          AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+          SOURCE_DIR: public
+          AWS_S3_BUCKET: ${{ env.AWS_BUCKET }}
+      - name: Invalidate CloudFront cache
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ env.CLOUDFRONT_DISTRIBUTION }}
+          PATHS: "/*"
+          AWS_REGION: ${{ env.AWS_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+
+#      - name: Build and deploy react web Node.js 16
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: 16.x
+#      - name: Install packages
+#        run: |
+#          cd packages/web
+#          yarn install
+#          yarn build
+#      - name: Deploy to S3
+#        run: aws s3 sync ./packages/web/build s3://app.lundy-widgethealth.io --acl public-read --follow-symlinks --delete
+#      - name: Invalidate cache
+#        run: aws cloudfront create-invalidation --distribution-id E2KN21J0A7RLQ8 --paths "/*"
