@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About David Anderson | Ally MLS</title>
+    <meta name="description" content="Professional biography of David Anderson, Founder of Ally MLS." />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="data:," />
+    <script defer src="/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand"><a href="/">Ally MLS</a></div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about-david">About David</a></li>
+            <li><a href="/about-ally">About Ally MLS</a></li>
+            <li><a href="/technology">Technology</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top:36px">
+      <h2 id="david-title"></h2>
+      <div class="founder">
+        <img id="david-headshot" src="/images/david.svg" alt="David Anderson headshot" class="headshot" />
+        <div>
+          <ul id="david-bio"></ul>
+          <p id="david-quote" class="quote"></p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© <span id="year"></span> Ally MLS · <span id="footer-email"></span></div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+  </body>
+  </html>
+
+

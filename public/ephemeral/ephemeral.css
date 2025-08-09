@@ -1,0 +1,5 @@
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,.3); backdrop-filter: blur(2px); display: none; z-index: 2147483000; }
+.overlay.show { display: block; }
+.bar { position: fixed; left: 0; right: 0; bottom: 0; height: 56px; background: linear-gradient(90deg,#2196f3,#00bcd4,#1de9b6); transform-origin: center bottom; opacity: 0; transition: opacity .2s ease; }
+.bar.live { opacity: 0.9; }
+

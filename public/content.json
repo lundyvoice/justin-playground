@@ -1,0 +1,72 @@
+{
+  "site": {
+    "title": "Ally MLS",
+    "tagline": "The MLS built for the next era of real estate",
+    "cta": "Learn More About Our Vision",
+    "footerEmail": "hello@allymls.com"
+  },
+  "home": {
+    "heroTitle": "Preserving the MLS. Powering Its Future.",
+    "heroSub": "Ally MLS exists to protect cooperation, transparency, and consumer choice. We unite independent MLSs into a strong, connected network — shielding the system from fragmentation and readying it for the legal challenges ahead.",
+    "heroCtaPrimaryText": "Learn How Ally Works",
+    "heroCtaPrimaryHref": "/about-ally",
+    "heroCtaSecondaryText": "Meet the Founder",
+    "heroCtaSecondaryHref": "/about-david",
+    "badges": [
+      {
+        "title": "Experienced Leadership",
+        "desc": "Founded by industry veterans with multiple successful exits.",
+        "icon": "leadership"
+      },
+      {
+        "title": "Financial Backing",
+        "desc": "Fully capitalized to acquire and strengthen MLS operations.",
+        "icon": "capital"
+      },
+      {
+        "title": "Proven Technology Partners",
+        "desc": "Built with modern infrastructure to deliver unmatched scale.",
+        "icon": "tech"
+      }
+    ]
+  },
+  "aboutDavid": {
+    "title": "About David Anderson",
+    "bio": [
+      "Industry builder and operator.",
+      "Scaled and exited multiple proptech companies.",
+      "Focused on aligning MLS incentives with member outcomes."
+    ],
+    "quote": "The MLS is the most powerful dataset in real estate—let’s align it with the people who own it.",
+    "headshot": "/images/david-anderson.jpg"
+  },
+  "aboutAlly": {
+    "title": "About Ally MLS",
+    "sections": [
+      {
+        "h": "A National, AI‑First MLS",
+        "p": "We are building a national footprint with a platform designed for voice, automation, and modern data standards."
+      },
+      {
+        "h": "Why Consolidation Matters",
+        "p": "Fragmentation slows innovation. Consolidation with aligned incentives creates the scale required to invest in quality, security, and usability."
+      },
+      {
+        "h": "Commitment to Agents and Consumers",
+        "p": "Ally MLS prioritizes speed, accessibility, and transparent governance to help members close more deals and deliver a better consumer experience."
+      }
+    ]
+  },
+  "technology": {
+    "title": "Technology at Ally MLS",
+    "items": [
+      "AI‑powered listing input and validation",
+      "Natural‑language search across listings and rules",
+      "Open integrations and modern APIs",
+      "Data quality, lineage, and governance",
+      "Accessibility‑first interaction models"
+    ]
+  }
+}
+
+
